@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RADENSYS | Radiation Engineering Systems</title>
-    <meta name="description" content="Radensys offers innovative engineering solutions including custom product design, embedded systems, industrial automation, and IoT integration using radiation systems.">
+    <meta name="description" content="Radensys develops the Spreader Bar Detection System (SBDS): continuous radiation threat detection for air, rail, road and maritime cargo transport.">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="style.css">
 </head>
@@ -18,7 +18,7 @@
     <header class="navbar">
         <div class="logo">
             <a href="#home">
-                <img src="assets/images/logo.png" alt="RADENSYS" width="160" height="57" decoding="async">
+                <img src="assets/images/logo.png" alt="RADENSYS" width="220" height="78" decoding="async">
             </a>
         </div>
 
@@ -30,8 +30,8 @@
 
         <ul class="nav-links" id="navLinks">
             <li><a href="#home" data-nav-link>Home</a></li>
+            <li><a href="#product" data-nav-link>SBDS</a></li>
             <li><a href="#services" data-nav-link>Services</a></li>
-            <li><a href="#work" data-nav-link>Our Work</a></li>
             <li><a href="#about" data-nav-link>About</a></li>
             <li><a href="#contact" class="nav-cta" data-nav-link>Contact</a></li>
         </ul>
@@ -39,74 +39,86 @@
 
     <!-- ============ HERO ============ -->
     <section class="hero" id="home">
-        <div class="hero-grid" aria-hidden="true"></div>
         <div class="hero-bg" style="background-image:url('assets/images/hero-bg.jpg');"></div>
         <div class="hero-overlay"></div>
-        <div class="hero-scanline" aria-hidden="true"></div>
-
-        <span class="crosshair crosshair--tl" aria-hidden="true"></span>
-        <span class="crosshair crosshair--tr" aria-hidden="true"></span>
-        <span class="crosshair crosshair--bl" aria-hidden="true"></span>
-        <span class="crosshair crosshair--br" aria-hidden="true"></span>
 
         <div class="hero-content">
-            <p class="eyebrow">MULTIDISCIPLINARY ENGINEERING &mdash; MECHANICAL / ELECTRICAL / SOFTWARE</p>
-            <h1>Radiation <span>Engineering Systems</span></h1>
+            <p class="eyebrow eyebrow--on-dark">RADIATION ENGINEERING SYSTEMS</p>
+            <h1>Detecting radiation threats <span>before they become incidents</span></h1>
             <p class="hero-lead">
                 We are a multidisciplinary engineering and technology firm dedicated to turning
-                ambitious ideas into market-ready realities. Our team blends mechanical, electrical,
-                and software expertise to deliver precise, cost-effective solutions that stand up
-                to real-world demands.
+                ambitious ideas into market-ready realities. Our flagship product, the Spreader Bar
+                Detection System, brings continuous radiation screening to air, rail, road and
+                maritime cargo &mdash; without slowing operations down.
             </p>
             <a href="#contact" class="btn">Get in Contact</a>
         </div>
     </section>
 
+    <!-- ============ PRODUCT: SBDS ============ -->
+    <section class="product-section reveal" id="product">
+        <div class="product-intro">
+            <p class="eyebrow">OUR PRODUCT</p>
+            <h2>Spreader Bar Detection System (SBDS)</h2>
+            <p>
+                Undeclared Class 7 (radioactive) cargo is a blind spot in global logistics. Based on
+                IAEA SSR-6, the IMDG Code and SOLAS (1974), the SBDS installs directly onto the
+                spreader bar so that every container is automatically scanned during normal handling
+                &mdash; identifying isotopes in the load and the logistic chain, with no added
+                operational delay.
+            </p>
+        </div>
+
+        <div class="product-showcase">
+            <img src="assets/images/product-detail.jpg" alt="The Radensys Spreader Bar Detection System installed on a container terminal" loading="lazy" decoding="async" width="1040" height="816">
+            <div class="product-stats">
+                <div class="stat">
+                    <span class="stat-number">4,390</span>
+                    <span class="stat-label">Confirmed incidents recorded industry-wide</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">1-in-10</span>
+                    <span class="stat-label">Shipments involve an issue with radioactive transport</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">175</span>
+                    <span class="stat-label">IMO member countries bound by SOLAS safety rules</span>
+                </div>
+            </div>
+        </div>
+
+        <p class="product-footnote">
+            Every lift is a blind spot unless you can identify the isotope &mdash;
+            continuous monitoring across air, sea, rail and road prevents anxiety, work
+            interruption, economic damage and loss of trust before they happen.
+        </p>
+    </section>
+
     <!-- ============ SERVICES ============ -->
     <section class="services-section reveal" id="services">
         <p class="eyebrow">CAPABILITIES</p>
-        <h2>Our Core Expertise</h2>
+        <h2>What We Bring to Every Deployment</h2>
         <div class="grid">
             <div class="card reveal">
-                <span class="card-code">CPD&mdash;01</span>
-                <h3>Custom Product Design</h3>
-                <p>Tailored engineering and prototyping from concept to final hardware verification.</p>
+                <span class="card-code">01</span>
+                <h3>Isotope Identification</h3>
+                <p>Real-time isotope detection and classification, distinguishing genuine threats from harmless background radiation.</p>
             </div>
             <div class="card reveal">
-                <span class="card-code">EMB&mdash;02</span>
-                <h3>Embedded Systems</h3>
-                <p>High-reliability firmware and hardware development built for critical operations.</p>
+                <span class="card-code">02</span>
+                <h3>Spreader Bar Integration</h3>
+                <p>Detection hardware built directly into terminal equipment, scanning every container with zero added handling time.</p>
             </div>
             <div class="card reveal">
-                <span class="card-code">AUT&mdash;03</span>
-                <h3>Industrial Automation</h3>
-                <p>Optimizing workflows and safety deployment using robust automated network systems.</p>
+                <span class="card-code">03</span>
+                <h3>Multi-Modal Coverage</h3>
+                <p>One detection philosophy applied consistently across air, rail, road and maritime cargo chains.</p>
             </div>
             <div class="card reveal">
-                <span class="card-code">IOT&mdash;04</span>
-                <h3>IoT Integration</h3>
-                <p>Connecting physical sensors and engineering architectures securely to cloud environments.</p>
+                <span class="card-code">04</span>
+                <h3>Regulatory Compliance</h3>
+                <p>Engineered to IAEA SSR-6, IMDG Code and SOLAS (1974) requirements from the ground up.</p>
             </div>
-        </div>
-    </section>
-
-    <!-- ============ GALLERY / OUR WORK ============ -->
-    <section class="gallery-section reveal" id="work">
-        <p class="eyebrow">FIELD RECORD</p>
-        <h2>Our Work in the Field</h2>
-        <div class="gallery-grid">
-            <figure class="gallery-item reveal">
-                <img src="assets/images/work-air.jpg" alt="Radiation threat detection at an airport cargo terminal" width="1000" height="747" loading="lazy" decoding="async">
-                <figcaption>FIG. 01 — AIR</figcaption>
-            </figure>
-            <figure class="gallery-item reveal">
-                <img src="assets/images/work-rail.jpg" alt="Radiation detection poles along a rail line" width="1000" height="749" loading="lazy" decoding="async">
-                <figcaption>FIG. 02 — RAIL</figcaption>
-            </figure>
-            <figure class="gallery-item reveal">
-                <img src="assets/images/work-road.jpg" alt="Radiation detection checkpoint on a road" width="1000" height="562" loading="lazy" decoding="async">
-                <figcaption>FIG. 03 — ROAD</figcaption>
-            </figure>
         </div>
     </section>
 
@@ -124,45 +136,59 @@
         </div>
     </section>
 
-    <!-- ============ CTA: WORK TOGETHER ============ -->
+    <!-- ============ CTA: WORK TOGETHER / CONTACT ============ -->
     <section class="cta-section reveal" id="contact">
-        <p class="eyebrow">GET STARTED</p>
-        <h2>Let's Work Together</h2>
-        <p>
-            Ready to elevate your next project? Fill in the form below, or email us directly,
-            and discover how our engineering experts can add value.
-        </p>
+        <div class="contact-wrap">
+            <div class="contact-intro">
+                <p class="eyebrow">GET STARTED</p>
+                <h2>Let's Work Together</h2>
+                <p>
+                    Ready to elevate your next project? Fill in the form, or reach us directly, and
+                    discover how our engineering experts can add value.
+                </p>
 
-        <!--
-            Formulier via Formspree (gratis tot 50 verzendingen/maand, geen backend nodig).
-            1. Ga naar https://formspree.io en maak een gratis account.
-            2. Maak een nieuw formulier aan, je krijgt een unieke URL zoals
-               https://formspree.io/f/abcd1234
-            3. Vervang hieronder YOUR_FORM_ID door dat ID.
-            Tot dan toont het formulier een foutmelding bij versturen —
-            gebruik ondertussen gerust de mailto-knop.
-        -->
-        <form class="contact-form" id="contactForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-            <div class="form-row">
-                <label for="contactName" class="sr-only">Naam</label>
-                <input type="text" id="contactName" name="name" placeholder="Your name" required>
-
-                <label for="contactEmail" class="sr-only">E-mailadres</label>
-                <input type="email" id="contactEmail" name="email" placeholder="Your email" required>
+                <div class="contact-details">
+                    <a href="mailto:info@radensys.eu">
+                        <span class="contact-icon" aria-hidden="true">&#9993;</span>
+                        info@radensys.eu
+                    </a>
+                    <a href="https://www.radensys.eu">
+                        <span class="contact-icon" aria-hidden="true">&#127760;</span>
+                        www.radensys.eu
+                    </a>
+                </div>
             </div>
 
-            <label for="contactMessage" class="sr-only">Bericht</label>
-            <textarea id="contactMessage" name="message" rows="4" placeholder="Tell us about your project" required></textarea>
+            <div class="contact-card">
+                <!--
+                    Formulier via Formspree (gratis tot 50 verzendingen/maand, geen backend nodig).
+                    1. Ga naar https://formspree.io en maak een gratis account.
+                    2. Maak een nieuw formulier aan, je krijgt een unieke URL zoals
+                       https://formspree.io/f/abcd1234
+                    3. Vervang hieronder YOUR_FORM_ID door dat ID.
+                -->
+                <form class="contact-form" id="contactForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                    <div class="field">
+                        <label for="contactName">Name</label>
+                        <input type="text" id="contactName" name="name" placeholder="Your name" required>
+                    </div>
 
-            <button type="submit" class="btn">Send Message</button>
-        </form>
+                    <div class="field">
+                        <label for="contactEmail">Email</label>
+                        <input type="email" id="contactEmail" name="email" placeholder="you@company.com" required>
+                    </div>
 
-        <p id="contactFormStatus" class="form-status" hidden></p>
+                    <div class="field">
+                        <label for="contactMessage">Message</label>
+                        <textarea id="contactMessage" name="message" rows="4" placeholder="Tell us about your project" required></textarea>
+                    </div>
 
-        <p class="contact-alt">
-            Prefer email? Reach us directly at
-            <a href="mailto:info@radensys.eu">info@radensys.eu</a>
-        </p>
+                    <button type="submit" class="btn btn--block">Send Message</button>
+                </form>
+
+                <p id="contactFormStatus" class="form-status" hidden></p>
+            </div>
+        </div>
     </section>
 
     <!-- ============ NEWSLETTER ============ -->
@@ -179,9 +205,9 @@
 
     <!-- ============ FOOTER ============ -->
     <footer>
-        <p class="footer-brand">RADENSYS // ENGINEERING SYSTEMS</p>
-        <p><a href="mailto:info@radensys.eu">CONTACT&nbsp;// info@radensys.eu</a></p>
-        <p><a href="https://www.radensys.eu">WEB&nbsp;// www.radensys.eu</a></p>
+        <img src="assets/images/logo.png" alt="RADENSYS" class="footer-logo" width="160" height="57" loading="lazy" decoding="async">
+        <p><a href="mailto:info@radensys.eu">info@radensys.eu</a></p>
+        <p><a href="https://www.radensys.eu">www.radensys.eu</a></p>
         <p class="copyright">&copy; 2026 RADENSYS. All rights reserved.</p>
     </footer>
 

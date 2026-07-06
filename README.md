@@ -19,38 +19,46 @@ Alles wat met **inhoud** te maken heeft, pas je aan in `index.html`.
 Alles wat met **uiterlijk** te maken heeft, pas je aan in `css/style.css` —
 bovenaan staan alle kleur- en lettertype-variabelen (`:root { ... }`).
 
-## Het ontwerpconcept: "engineering blueprint"
+## Het ontwerpconcept
 
-In plaats van een generieke donkere tech-site heb ik gekozen voor een look die
-aansluit bij wat Radensys echt doet: technische tekeningen maken.
+De site gebruikt nu het echte kleurenschema van het Radensys-logo: het exacte
+blauw uit het logo (`#167BD6`), zwart/inktkleurige tekst, en een wit/lichte
+achtergrond. Enkel de navbar, hero en footer blijven donker navy — daar staat
+het witte logo van nature op, en het geeft de pagina een duidelijk begin en
+einde zonder de hele site donker te maken.
 
-- **Achtergrond**: een subtiel blauwdruk-rooster, met registratiekruisjes in de
-  hoeken van de hero — zoals je die op echte technische tekeningen ziet.
-- **Kleuren**: diep blauwzwart (`--bg: #0a1420`) met een warm amber-accent
-  (`--accent: #ffb020`) — een knipoog naar het universele stralingsgevaar-symbool,
-  en het onderscheidt de site van standaard blauw/paars-tech-sites.
-- **Typografie**: 'Space Grotesk' voor koppen (technisch, geometrisch),
-  'Inter' voor lopende tekst, en 'JetBrains Mono' voor labels en codes —
-  net als op een specsheet.
-- **Details**: de dienstenkaarten hebben een "onderdeelcode" (CPD—01, EMB—02, ...)
-  in plaats van generieke iconen, en de foto's in de galerij zijn genummerd
-  als "FIG. 01 / 02 / 03", zoals bijschriften in technische documentatie.
-- **Beweging**: een subtiele scanlijn in de hero en zachte scroll-animaties
-  op secties/kaarten. Alles respecteert `prefers-reduced-motion` — mensen die
-  animaties liever uitzetten, krijgen een statische versie.
+- **Logo**: fors groter (64px hoog in de navbar, was amper zichtbaar).
+- **Kleuren**: `--accent: #167bd6` (het logo-blauw) is overal de enige accentkleur,
+  geen amber meer.
+- **Typografie**: 'Space Grotesk' voor koppen, 'Inter' voor de rest — geen
+  monospace-labels meer, dat oogde te technisch/gadget-achtig voor een
+  security-/detectiebedrijf.
 
-Wil je een andere sfeer (bijvoorbeeld lichter, of een andere accentkleur)? Pas
-gewoon de variabelen bovenaan `css/style.css` aan — de rest van de site
-volgt automatisch mee.
+Wil je een andere sfeer? Pas de variabelen bovenaan `style.css` aan.
+
+## Product-sectie i.p.v. galerij
+
+De vorige "Our Work in the Field"-galerij toonde eigenlijk foto's van
+RadComm Systems' technologie, niet van Radensys zelf — die is verwijderd.
+In de plaats staat nu een sectie rond jullie eigen product, de **Spreader Bar
+Detection System (SBDS)**, met de foto en de cijfers uit jullie eigen infosheet
+(`Folder_radensys_transport_V3.pdf`): 4.390 bevestigde incidenten, 1-op-10
+transporten met een issue, 175 IMO-lidstaten.
+
+De 4 kaarten in "Services" zijn herschreven om te verwijzen naar wat het SBDS
+echt doet (isotoopidentificatie, integratie in de spreader bar, multimodale
+dekking, regelgeving zoals IAEA/IMDG/SOLAS) in plaats van generieke
+IoT/embedded-tekst. Kijk dit zeker na en pas aan waar nodig — ik heb dit
+afgeleid uit jullie infosheet, maar ken het product niet in detail.
 
 ## Afbeeldingen
 
-De site gebruikt nu lokale afbeeldingen uit `assets/images/`:
+De site gebruikt lokale afbeeldingen uit `assets/images/`:
 
 - `logo.png` — het echte Radensys-logo (wit/blauw), uitgesneden uit `Logo_4.pdf`
-- `hero-bg.jpg` — de SBDS spreader bar-installatie op de kade, uit jullie infosheet
-- `work-air.jpg`, `work-rail.jpg`, `work-road.jpg` — de AIR/RAIL/ROAD-foto's uit
-  hetzelfde infosheet
+- `hero-bg.jpg` — de SBDS spreader bar-installatie op de kade
+- `product-detail.jpg` — close-up van diezelfde installatie, gebruikt in de
+  product-sectie
 
 Wil je een ander logo of andere foto's gebruiken? Zet het nieuwe bestand in
 `assets/images/` en pas het pad aan in `index.html`.
