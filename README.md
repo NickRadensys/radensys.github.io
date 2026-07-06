@@ -7,12 +7,12 @@ verder aan kan werken op GitHub (GitHub Pages, Netlify, Vercel, ... werken hier 
 
 ```
 /
-├── index.html          → de pagina-inhoud (HTML)
-├── css/
-│   └── style.css       → alle styling (kleuren, layout, responsive gedrag)
-├── js/
-│   └── main.js         → mobiel menu, nieuwsbrief-formulier, scroll-animaties
-└── README.md            → dit bestand
+├── index.html              → home pagina
+├── sbds-whitepaper.html    → technisch paper over de SBDS
+├── style.css               → alle styling (kleuren, layout, responsive gedrag)
+├── main.js                 → mobiel menu, formulieren, scroll-animaties
+├── assets/images/          → logo en foto's
+└── README.md               → dit bestand
 ```
 
 Alles wat met **inhoud** te maken heeft, pas je aan in `index.html`.
@@ -27,7 +27,7 @@ achtergrond. Enkel de navbar, hero en footer blijven donker navy — daar staat
 het witte logo van nature op, en het geeft de pagina een duidelijk begin en
 einde zonder de hele site donker te maken.
 
-- **Logo**: fors groter (64px hoog in de navbar, was amper zichtbaar).
+- **Logo**: fors groter (88px hoog in de navbar, was amper zichtbaar).
 - **Kleuren**: `--accent: #167bd6` (het logo-blauw) is overal de enige accentkleur,
   geen amber meer.
 - **Typografie**: 'Space Grotesk' voor koppen, 'Inter' voor de rest — geen
@@ -83,6 +83,29 @@ Tot je dat gedaan hebt, toont het formulier bij versturen een foutmelding en
 verwijst het bezoekers naar het e-mailadres eronder — de site blijft dus altijd
 bruikbaar.
 
+## Nieuwe pagina: het technisch paper
+
+`sbds-whitepaper.html` is een nieuwe pagina die het volledige document
+`Radensys_SBDS_Paper.docx` toont — alle tekst is exact overgenomen, enkel
+opgemaakt in het stijl van de site (met een korte inhoudsopgave, en de
+voetnootverwijzingen `[1]`&ndash;`[5]` als klikbare links naar de
+referentielijst onderaan). De "Learn More"-knop bij de cijfers in de
+product-sectie op de homepage linkt hiernaartoe.
+
+Let op: het infosheet (`Folder_radensys_transport_V3.pdf`, gebruikt voor de
+cijfers op de homepage) vermeldt **4.390** bevestigde incidenten, terwijl het
+technisch paper **4.626** vermeldt (andere brondatum: IAEA ITDB t.e.m. 2025).
+Ik heb dat verschil laten staan zoals het in de bronnen stond — laat het
+weten als je wil dat ik dat gelijktrek.
+
+## Overige aanpassingen
+
+- **Logo groter**: 88px in de navbar (was 64px), en dezelfde afmeting op de
+  nieuwe whitepaper-pagina.
+- **Hero-achtergrond lichter**: de foto van de SBDS-installatie is minder
+  verduisterd (van 0.5 naar 0.85 dekking, lichtere overlay), met een zachte
+  tekstschaduw zodat de titel leesbaar blijft.
+
 ## Nieuwsbrief-formulier
 
 Het formulier ("Join Our Mailing List") toont nog enkel een bedankbericht in de
@@ -97,7 +120,7 @@ Laat het weten als je hulp wil om dat in te stellen.
 
 - **Werkend contactformulier** (zie hierboven) i.p.v. enkel een mailto-link.
 - **Actieve navigatie**: de navigatielink van de sectie die je aan het bekijken
-  bent, licht op in amber (scroll-spy).
+  bent, licht op in het blauwe accent (scroll-spy).
 - **Sticky mobiele contactbalk**: op telefoon blijft er onderaan altijd een
   "Email" en "Get in Contact"-knop zichtbaar, zodat bezoekers nooit ver hoeven
   te scrollen om contact op te nemen.
@@ -107,8 +130,6 @@ Laat het weten als je hulp wil om dat in te stellen.
   `decoding="async"` overal.
 
 ### Nog te overwegen
-- Afbeeldingen lokaal hosten in plaats van via Squarespace's CDN (zie hierboven) —
-  dat scheelt laadtijd en maakt je onafhankelijk van je Squarespace-account.
 - Afbeeldingen comprimeren/naar `.webp` omzetten voor nog snellere laadtijden
   (bv. via [squoosh.app](https://squoosh.app)).
 - Een `sitemap.xml` en `robots.txt` toevoegen voor betere vindbaarheid in Google.

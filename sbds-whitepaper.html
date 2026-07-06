@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SBDS Technical Paper | RADENSYS</title>
+    <meta name="description" content="A crane-integrated screening layer for defence-in-depth nuclear security — the technical paper behind the Radensys Spreader Bar Detection System.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- ============ HEADER / NAV ============ -->
+    <header class="navbar">
+        <div class="logo">
+            <a href="index.html">
+                <img src="assets/images/logo.png" alt="RADENSYS" width="260" height="92" decoding="async">
+            </a>
+        </div>
+
+        <button class="menu-toggle" id="menuToggle" aria-label="Menu openen" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html">&larr; Back to site</a></li>
+            <li><a href="index.html#product">SBDS</a></li>
+            <li><a href="index.html#contact" class="nav-cta">Contact</a></li>
+        </ul>
+    </header>
+
+    <!-- ============ PAPER HEADER ============ -->
+    <section class="paper-hero">
+        <p class="eyebrow eyebrow--on-dark">TECHNICAL PAPER</p>
+        <h1>Spreader Bar Detection System (SBDS)</h1>
+        <p class="paper-subtitle">A crane-integrated screening layer for defence-in-depth nuclear security</p>
+    </section>
+
+    <!-- ============ PAPER BODY ============ -->
+    <article class="paper">
+
+        <nav class="paper-toc" aria-label="On this page">
+            <span class="paper-toc-label">On this page</span>
+            <a href="#introduction">1. Introduction</a>
+            <a href="#problem-statement">2. Problem statement</a>
+            <a href="#sbds">3. Spreader Bar Detection System (SBDS)</a>
+            <a href="#conclusion">4. Conclusion</a>
+            <a href="#references">References</a>
+        </nav>
+
+        <div class="paper-content">
+
+            <h2 id="introduction">1. Introduction</h2>
+            <p>
+                Ports are essential nodes of global trade, but their throughput and operational
+                complexity also make them particularly exposed to nuclear and radiological risks.
+                The International Atomic Energy Agency (IAEA) Incident and Trafficking Database (ITDB)
+                records <strong>4,626 confirmed incidents</strong> involving nuclear and other
+                radioactive material out of regulatory control between 1993 and 2025, of which
+                approximately 14&nbsp;% involved nuclear material
+                <a href="#ref-1" class="citation" id="cite-1">[1]</a>. The IAEA further reports that
+                nearly <strong>70&nbsp;% of thefts</strong> of such material over the past decade
+                occurred during authorized transport, and that in about 59&nbsp;% of those
+                transport-related cases the material has never been recovered
+                <a href="#ref-2" class="citation" id="cite-2">[2]</a>.
+            </p>
+            <p>
+                Should radioactive material enter the maritime container flow undetected, the
+                consequences may be severe: occupational and public exposure, environmental
+                contamination, disruption of critical infrastructure, and significant economic losses
+                across the supply chain. In its most adverse form, diverted material could be used to
+                construct a radiological dispersal device, the so-called &ldquo;dirty bomb&rdquo;.
+                Radiation detection technology is therefore widely recognized as an indispensable
+                component of a layered, defense-in-depth nuclear security architecture
+                <a href="#ref-3" class="citation" id="cite-3">[3]</a>.
+            </p>
+
+            <h2 id="problem-statement">2. Problem statement</h2>
+            <p>
+                <strong>Conventional radiological screening at ports</strong> relies primarily on
+                <strong>Radiation Portal Monitors (RPMs)</strong> equipped with large polyvinyl
+                toluene (PVT) plastic scintillators. PVT offers high intrinsic gamma efficiency at low
+                cost and is well suited to large-area passive screening; however, its energy
+                resolution is intrinsically <strong>poor</strong> which limits the ability to identify
+                specific radionuclides
+                <a href="#ref-4" class="citation" id="cite-4">[4]</a>,
+                <a href="#ref-5" class="citation" id="cite-5b">[5]</a>. PVT-based RPMs reliably
+                indicate elevated gamma fields, but provide <strong>insufficient</strong> spectroscopic
+                information to distinguish naturally occurring radioactive material (NORM) from medical
+                or industrial sources or from isotopes of concern such as caesium-137 and cobalt-60.
+            </p>
+            <p>
+                Secondly, RPMs typically measure containers only when they enter or leave the terminal.
+                Transshipment containers and units that remain inside the terminal yard may never
+                traverse a fixed portal. Detection performance can be further degraded by vehicle speed
+                and the standoff distance between detector and container, all of which can create blind
+                spots and increase the probability of missing a genuine threat. Mobile spectroscopic
+                systems exist, but typically introduce additional handling and risk operational delays.
+            </p>
+            <p>
+                <strong>Two functional requirements</strong> therefore emerge for the next generation
+                of port-level radiological screening: (i) comprehensive <strong>coverage</strong> of
+                every container handled, with measurement geometries close enough to preserve
+                sensitivity; and (ii) sufficient <strong>spectroscopic information</strong> to enable
+                isotope identification at the first detection stage, allowing responders to make
+                proportionate decisions on isolation, verification and recovery.
+            </p>
+
+            <h2 id="sbds">3. Spreader Bar Detection System (SBDS)</h2>
+            <p>
+                Building on more than two decades of experience in designing radiation detection
+                systems for the scrap, steel, waste and logistics sectors, Radensys has developed the
+                Spreader Bar Detection System (SBDS), which integrates spectroscopic gamma detectors
+                directly into the spreader bar of a container crane. With a single SBDS installation
+                per crane, every container handled is automatically screened during the normal
+                lift-cycle of approximately 20&ndash;40 seconds, with the detector positioned in close
+                proximity to the container surface. Screening is thereby embedded into existing
+                terminal workflows without additional handling, dedicated infrastructure, or
+                operational delay.
+            </p>
+            <p>
+                A central design choice of the SBDS is the use of <strong>crystal-based scintillation
+                detectors</strong>, which provide the energy resolution required to identify
+                gamma-emitting isotopes
+                <a href="#ref-4" class="citation" id="cite-4b">[4]</a>,
+                <a href="#ref-5" class="citation" id="cite-5">[5]</a>. The system can therefore
+                distinguish between NORM signatures such as potassium-40, legitimate medical or
+                industrial sources, and isotopes commonly associated with malicious use such as
+                caesium-137 and cobalt-60.
+            </p>
+            <p>
+                The SBDS addresses both gaps identified above. It increases effective coverage by
+                screening containers that would otherwise bypass fixed portals and raises the
+                information content of the first detection stage from a generic &ldquo;gamma
+                alarm&rdquo; to an identified isotope measurement. The same spectroscopic data also
+                supports clearance procedures, allowing operators to confirm that cargo and operational
+                areas are safe before normal activities resume.
+            </p>
+
+            <h2 id="conclusion">4. Conclusion</h2>
+            <p>
+                The radiological threat landscape at maritime ports is shaped by persistently high
+                volumes of transport-related incidents reported to the IAEA, and by the
+                well-documented spectroscopic limitations of legacy PVT-based portal monitors. A
+                robust defense-in-depth response requires not only more detection points, but smarter
+                ones.
+            </p>
+            <p>
+                By <strong>integrating</strong> crystal-based gamma detectors into the spreader bar of
+                a container crane, the Radensys SBDS converts each routine container movement into an
+                isotope <strong>screening</strong> event, without disrupting terminal operations. The
+                result is broader <strong>coverage</strong>, more <strong>actionable alarms</strong>
+                and a more <strong>proportionate response</strong>, contributing meaningfully to the
+                <strong>protection</strong> of personnel, critical infrastructure and the global supply
+                chain against nuclear and radiological risks.
+            </p>
+
+            <h2 id="references">References</h2>
+            <ol class="paper-references">
+                <li id="ref-1">
+                    International Atomic Energy Agency, Incident and Trafficking Database (ITDB)
+                    &mdash; 2025 Factsheet, IAEA, Vienna, 2025. Available:
+                    <a href="https://www.iaea.org/sites/default/files/25/03/itdb-factsheet.pdf">https://www.iaea.org/sites/default/files/25/03/itdb-factsheet.pdf</a>
+                </li>
+                <li id="ref-2">
+                    International Atomic Energy Agency, &ldquo;IAEA Database: About 55&nbsp;% of
+                    Nuclear and Other Radioactive Material Thefts Since 1993 Occurred During
+                    Transport,&rdquo; IAEA Press Release, March 2026.
+                </li>
+                <li id="ref-3">
+                    International Atomic Energy Agency, Nuclear Security Recommendations on Nuclear
+                    and Other Radioactive Material out of Regulatory Control, IAEA Nuclear Security
+                    Series No.&nbsp;15, Vienna, 2011.
+                </li>
+                <li id="ref-4">
+                    E.&nbsp;R. Siciliano et al., &ldquo;Comparison of PVT and NaI(Tl) scintillators for
+                    vehicle portal monitor applications,&rdquo; Nuclear Instruments and Methods in
+                    Physics Research A, vol.&nbsp;550, pp.&nbsp;647&ndash;674, 2005.
+                </li>
+                <li id="ref-5">
+                    Y.&nbsp;Altmann et al., &ldquo;Expectation-propagation for weak radionuclide
+                    identification at radiation portal monitors,&rdquo; Scientific Reports,
+                    vol.&nbsp;10, art.&nbsp;6811, 2020. doi:10.1038/s41598-020-62947-3.
+                </li>
+            </ol>
+
+            <div class="paper-cta">
+                <p>Want to discuss the SBDS for your terminal or logistics chain?</p>
+                <a href="index.html#contact" class="btn">Get in Contact</a>
+            </div>
+        </div>
+    </article>
+
+    <!-- ============ FOOTER ============ -->
+    <footer>
+        <img src="assets/images/logo.png" alt="RADENSYS" class="footer-logo" width="160" height="57" loading="lazy" decoding="async">
+        <p><a href="mailto:info@radensys.eu">info@radensys.eu</a></p>
+        <p><a href="https://www.radensys.eu">www.radensys.eu</a></p>
+        <p class="copyright">&copy; 2026 RADENSYS. All rights reserved.</p>
+    </footer>
+
+    <!-- Back-to-top knop, verschijnt na scrollen -->
+    <button id="backToTop" class="back-to-top" aria-label="Terug naar boven" hidden>&uarr;</button>
+
+    <script src="main.js"></script>
+</body>
+</html>
