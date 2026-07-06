@@ -8,79 +8,234 @@
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
     <style>
-        /* CSS Basis Stijlen - Volledig aanpasbaar! */
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #0b0f19; /* Donkere tech achtergrond */
-            color: #ffffff;
+        /* CSS Reset & Variabelen */
+        :root {
+            --bg-color: #0b0f19;
+            --card-bg: #111827;
+            --text-main: #ffffff;
+            --text-muted: #94a3b8;
+            --accent: #3b82f6;
+            --accent-hover: #2563eb;
+            --max-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Navigatiebalk */
+        navbar {
             display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-            justify-content: center;
+            justify-content: space-between;
             align-items: center;
+            padding: 20px max(2rem, (100vw - var(--max-width)) / 2);
+            border-bottom: 1px solid #1e293b;
+        }
+
+        navbar .logo img {
+            height: 40px;
+            width: auto;
+        }
+
+        navbar .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        navbar .nav-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.2s;
+        }
+
+        navbar .nav-links a:hover {
+            color: var(--text-main);
+        }
+
+        /* Hero Sectie */
+        .hero {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 100px 2rem;
             text-align: center;
         }
 
-        header img {
-            max-width: 300px;
-            height: auto;
+        .hero h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 700;
+            line-height: 1.1;
+            letter-spacing: -0.02em;
             margin-bottom: 20px;
         }
 
-        main {
-            max-width: 600px;
-            padding: 20px;
+        .hero h1 span {
+            color: var(--accent);
         }
 
-        h1 {
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 10px;
-            letter-spacing: -0.05em;
+        .hero p {
+            font-size: clamp(1.1rem, 2vw, 1.3rem);
+            color: var(--text-muted);
+            max-width: 800px;
+            margin: 0 auto 40px auto;
         }
 
-        p {
-            font-size: 1.1rem;
-            color: #94a3b8; /* Zachtgrijze tekst */
-            line-height: 1.6;
-        }
-
-        .cta-button {
+        .btn {
             display: inline-block;
-            margin-top: 30px;
-            padding: 12px 24px;
-            background-color: #3b82f6; /* Blauwe knop */
-            color: #ffffff;
+            background-color: var(--accent);
+            color: var(--text-main);
             text-decoration: none;
+            padding: 14px 28px;
             font-weight: 600;
             border-radius: 6px;
-            transition: background 0.2s;
+            transition: background 0.2s, transform 0.1s;
         }
 
-        .cta-button:hover {
-            background-color: #2563eb;
+        .btn:hover {
+            background-color: var(--accent-hover);
+            transform: translateY(-1px);
+        }
+
+        /* Services Grid Sectie */
+        .services-section {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 60px 2rem 100px 2rem;
+        }
+
+        .services-section h2 {
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 24px;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border: 1px solid #1e293b;
+            padding: 30px;
+            border-radius: 8px;
+            transition: border-color 0.2s, transform 0.2s;
+        }
+
+        .card:hover {
+            border-color: var(--accent);
+            transform: translateY(-4px);
+        }
+
+        .card .icon {
+            font-size: 1.5rem;
+            color: var(--accent);
+            margin-bottom: 15px;
+        }
+
+        .card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 12px;
+        }
+
+        .card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* Footer */
+        footer {
+            border-top: 1px solid #1e293b;
+            padding: 40px 2rem;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        footer p {
+            margin-bottom: 10px;
+        }
+
+        /* Mobiel Menu Aanpassing */
+        @media (max-width: 600px) {
+            navbar {
+                flex-direction: column;
+                gap: 20px;
+            }
+            .hero {
+                padding: 60px 1rem;
+            }
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <img src="https://images.squarespace-cdn.com/content/v1/69a155e3d338a120b5c73211/676b66a2-4ef5-4bac-9a9b-f9a702bea36b/Logo_Radensys_white.png" alt="RADENSYS Logo">
-    </header>
+    <navbar>
+        <div class="logo">
+            <img src="https://images.squarespace-cdn.com/content/v1/69a155e3d338a120b5c73211/676b66a2-4ef5-4bac-9a9b-f9a702bea36b/Logo_Radensys_white.png" alt="RADENSYS Logo">
+        </div>
+        <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="mailto:info@radensys.eu">Contact</a></li>
+        </ul>
+    </navbar>
 
-    <main>
-        <h1>Radiation Engineering Systems</h1>
+    <section class="hero">
+        <h1>Innovative <span>Engineering Solutions</span></h1>
         <p>
-            Radensys offers innovative engineering solutions including custom product design, 
-            embedded systems, industrial automation, and IoT integration using radiation systems.
+            Radensys offers custom product design, embedded systems, industrial automation, 
+            and IoT integration using high-end radiation engineering systems.
         </p>
-        <a href="mailto:info@radensys.eu" class="cta-button">Contact Us</a>
-    </main>
+        <a href="mailto:info@radensys.eu" class="btn">Discuss Your Project</a>
+    </section>
+
+    <section class="services-section" id="services">
+        <h2>Our Core Expertise</h2>
+        <div class="grid">
+            <div class="card">
+                <div class="icon">⚙️</div>
+                <h3>Custom Product Design</h3>
+                <p>Tailored engineering and prototyping from concept to final hardware verification.</p>
+            </div>
+            <div class="card">
+                <div class="icon">💻</div>
+                <h3>Embedded Systems</h3>
+                <p>High-reliability firmware and hardware development built for critical operations.</p>
+            </div>
+            <div class="card">
+                <div class="icon">🏭</div>
+                <h3>Industrial Automation</h3>
+                <p>Optimizing workflows and safety deployment using robust automated network systems.</p>
+            </div>
+            <div class="card">
+                <div class="icon">🌐</div>
+                <h3>IoT Integration</h3>
+                <p>Connecting physical sensors and engineering architectures securely to cloud environments.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 RADENSYS. All rights reserved.</p>
+        <p>Contact: <a href="mailto:info@radensys.eu" style="color: var(--accent); text-decoration: none;">info@radensys.eu</a></p>
+    </footer>
 
 </body>
 </html>
