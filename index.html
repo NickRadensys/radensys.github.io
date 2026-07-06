@@ -8,7 +8,7 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -33,17 +33,26 @@
             <li><a href="#services">Services</a></li>
             <li><a href="#work">Our Work</a></li>
             <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="#contact" class="nav-cta">Contact</a></li>
         </ul>
     </header>
 
     <!-- ============ HERO ============ -->
     <section class="hero" id="home">
+        <div class="hero-grid" aria-hidden="true"></div>
         <div class="hero-bg" style="background-image:url('https://images.squarespace-cdn.com/content/v1/69a155e3d338a120b5c73211/de0a1f00-ae99-4edc-8501-90dabebf0cb3/foto_1.png?format=1500w');"></div>
         <div class="hero-overlay"></div>
+        <div class="hero-scanline" aria-hidden="true"></div>
+
+        <span class="crosshair crosshair--tl" aria-hidden="true"></span>
+        <span class="crosshair crosshair--tr" aria-hidden="true"></span>
+        <span class="crosshair crosshair--bl" aria-hidden="true"></span>
+        <span class="crosshair crosshair--br" aria-hidden="true"></span>
+
         <div class="hero-content">
+            <p class="eyebrow">MULTIDISCIPLINARY ENGINEERING &mdash; MECHANICAL / ELECTRICAL / SOFTWARE</p>
             <h1>Radiation <span>Engineering Systems</span></h1>
-            <p>
+            <p class="hero-lead">
                 We are a multidisciplinary engineering and technology firm dedicated to turning
                 ambitious ideas into market-ready realities. Our team blends mechanical, electrical,
                 and software expertise to deliver precise, cost-effective solutions that stand up
@@ -54,26 +63,27 @@
     </section>
 
     <!-- ============ SERVICES ============ -->
-    <section class="services-section" id="services">
+    <section class="services-section reveal" id="services">
+        <p class="eyebrow">CAPABILITIES</p>
         <h2>Our Core Expertise</h2>
         <div class="grid">
-            <div class="card">
-                <div class="icon">⚙️</div>
+            <div class="card reveal">
+                <span class="card-code">CPD&mdash;01</span>
                 <h3>Custom Product Design</h3>
                 <p>Tailored engineering and prototyping from concept to final hardware verification.</p>
             </div>
-            <div class="card">
-                <div class="icon">💻</div>
+            <div class="card reveal">
+                <span class="card-code">EMB&mdash;02</span>
                 <h3>Embedded Systems</h3>
                 <p>High-reliability firmware and hardware development built for critical operations.</p>
             </div>
-            <div class="card">
-                <div class="icon">🏭</div>
+            <div class="card reveal">
+                <span class="card-code">AUT&mdash;03</span>
                 <h3>Industrial Automation</h3>
                 <p>Optimizing workflows and safety deployment using robust automated network systems.</p>
             </div>
-            <div class="card">
-                <div class="icon">🌐</div>
+            <div class="card reveal">
+                <span class="card-code">IOT&mdash;04</span>
                 <h3>IoT Integration</h3>
                 <p>Connecting physical sensors and engineering architectures securely to cloud environments.</p>
             </div>
@@ -81,28 +91,42 @@
     </section>
 
     <!-- ============ GALLERY / OUR WORK ============ -->
-    <section class="gallery-section" id="work">
+    <section class="gallery-section reveal" id="work">
+        <p class="eyebrow">FIELD RECORD</p>
         <h2>Our Work in the Field</h2>
         <div class="gallery-grid">
-            <img src="https://images.squarespace-cdn.com/content/v1/69a155e3d338a120b5c73211/b00c381d-57d0-4077-9961-b33d05f6e098/1000023471.jpg?format=1000w" alt="Engineering project on site" loading="lazy">
-            <img src="https://images.squarespace-cdn.com/content/v1/69a155e3d338a120b5c73211/2f53d336-437f-4838-b3fc-3b0c488460a3/1000023472.jpg?format=1000w" alt="Engineering project detail" loading="lazy">
-            <img src="https://images.squarespace-cdn.com/content/v1/69a155e3d338a120b5c73211/bab133c4-dc83-427e-998c-793218cba4f2/foto_4.png?format=1000w" alt="Industrial installation" loading="lazy">
+            <figure class="gallery-item reveal">
+                <img src="https://images.squarespace-cdn.com/content/v1/69a155e3d338a120b5c73211/b00c381d-57d0-4077-9961-b33d05f6e098/1000023471.jpg?format=1000w" alt="Engineering project on site" loading="lazy">
+                <figcaption>FIG. 01</figcaption>
+            </figure>
+            <figure class="gallery-item reveal">
+                <img src="https://images.squarespace-cdn.com/content/v1/69a155e3d338a120b5c73211/2f53d336-437f-4838-b3fc-3b0c488460a3/1000023472.jpg?format=1000w" alt="Engineering project detail" loading="lazy">
+                <figcaption>FIG. 02</figcaption>
+            </figure>
+            <figure class="gallery-item reveal">
+                <img src="https://images.squarespace-cdn.com/content/v1/69a155e3d338a120b5c73211/bab133c4-dc83-427e-998c-793218cba4f2/foto_4.png?format=1000w" alt="Industrial installation" loading="lazy">
+                <figcaption>FIG. 03</figcaption>
+            </figure>
         </div>
     </section>
 
     <!-- ============ ABOUT ============ -->
-    <section class="about-section" id="about">
-        <h2>About Us</h2>
-        <p>
-            Radensys was founded on the belief that great engineering happens where mechanical,
-            electrical, and software disciplines meet. From first sketch to final verification, we
-            work closely with our clients to design robust, scalable systems that perform reliably
-            in demanding industrial environments.
-        </p>
+    <section class="about-section reveal" id="about">
+        <div class="about-frame">
+            <p class="eyebrow">ABOUT</p>
+            <h2>About Us</h2>
+            <p>
+                Radensys was founded on the belief that great engineering happens where mechanical,
+                electrical, and software disciplines meet. From first sketch to final verification, we
+                work closely with our clients to design robust, scalable systems that perform reliably
+                in demanding industrial environments.
+            </p>
+        </div>
     </section>
 
     <!-- ============ CTA: WORK TOGETHER ============ -->
-    <section class="cta-section" id="contact">
+    <section class="cta-section reveal" id="contact">
+        <p class="eyebrow">GET STARTED</p>
         <h2>Let's Work Together</h2>
         <p>
             Ready to elevate your next project? Contact us today for a complimentary consultation
@@ -125,9 +149,9 @@
 
     <!-- ============ FOOTER ============ -->
     <footer>
-        <p><strong>Contact Us</strong></p>
-        <p><a href="mailto:info@radensys.eu">info@radensys.eu</a></p>
-        <p><a href="https://www.radensys.eu">www.radensys.eu</a></p>
+        <p class="footer-brand">RADENSYS // ENGINEERING SYSTEMS</p>
+        <p><a href="mailto:info@radensys.eu">CONTACT&nbsp;// info@radensys.eu</a></p>
+        <p><a href="https://www.radensys.eu">WEB&nbsp;// www.radensys.eu</a></p>
         <p class="copyright">&copy; 2026 RADENSYS. All rights reserved.</p>
     </footer>
 
