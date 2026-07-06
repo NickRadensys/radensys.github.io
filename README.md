@@ -43,30 +43,10 @@ Wil je een andere sfeer (bijvoorbeeld lichter, of een andere accentkleur)? Pas
 gewoon de variabelen bovenaan `css/style.css` aan — de rest van de site
 volgt automatisch mee.
 
-## Wat is er anders dan je oude Squarespace-site?
+## Afbeeldingen
 
-Ik heb de originele `paginabron.txt` (de Squarespace-export) doorgenomen en de
-echte inhoud en volgorde van de secties overgenomen: hero met de originele
-introtekst, de 3 foto's uit de galerij, "About Us", "Let's Work Together" en
-het "Join Our Mailing List"-formulier.
-
-De "Our Core Expertise"-kaarten (Custom Product Design, Embedded Systems, ...)
-stonden **niet** op de originele Squarespace-pagina — die had je zelf al
-toegevoegd aan de GitHub-versie. Ik heb ze laten staan omdat ze goed passen bij
-het bedrijf, maar verwijder de hele `<section class="services-section">` in
-`index.html` gerust als je ze niet wil.
-
-## Belangrijk: afbeeldingen
-
-De afbeeldingen (logo, hero-achtergrond, galerij) linken nu nog rechtstreeks naar
-Squarespace's CDN (`images.squarespace-cdn.com`). Dat werkt zolang je
-Squarespace-account actief blijft, maar is niet toekomstbestendig als je daar
-ooit weg wil. Beter:
-
-1. Download de afbeeldingen (rechtermuisklik → "Afbeelding opslaan als") van je
-   huidige site.
-2. Zet ze in een nieuwe map, bv. `assets/images/`.
-3. Vervang in `index.html` de lange Squarespace-URL's door bv.
+1. Zet ze in een nieuwe map, bv. `assets/images/`.
+2. Vervang in `index.html` de lange Squarespace-URL's door bv.
    `assets/images/logo.png`.
 
 ## Nieuwsbrief-formulier
