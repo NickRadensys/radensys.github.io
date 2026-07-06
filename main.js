@@ -24,18 +24,39 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     /* --- Nieuwsbrief formulier ---
-       Let op: dit toont alleen een bedankbericht in de browser.
-       Om echt e-mailadressen te verzamelen moet je dit formulier
-       koppelen aan een dienst zoals Mailchimp, Brevo of Formspree.
-       Zie README.md voor uitleg. */
+       Verzendt naar hetzelfde Formspree-formulier als het contactformulier
+       (zie index.html) — vul eerst je eigen Formspree-ID in, anders blijft
+       dit een foutmelding tonen. */
     const newsletterForm = document.getElementById('newsletterForm');
     const newsletterThanks = document.getElementById('newsletterThanks');
 
     if (newsletterForm && newsletterThanks) {
-        newsletterForm.addEventListener('submit', (event) => {
+        newsletterForm.addEventListener('submit', async (event) => {
             event.preventDefault();
-            newsletterForm.hidden = true;
-            newsletterThanks.hidden = false;
+
+            const submitBtn = newsletterForm.querySelector('button[type="submit"]');
+            submitBtn.disabled = true;
+
+            try {
+                const response = await fetch(newsletterForm.action, {
+                    method: 'POST',
+                    body: new FormData(newsletterForm),
+                    headers: { 'Accept': 'application/json' }
+                });
+
+                if (!response.ok) throw new Error('Newsletter submission failed');
+
+                newsletterForm.reset();
+                newsletterForm.hidden = true;
+                newsletterThanks.hidden = false;
+                newsletterThanks.textContent = 'Thank you!';
+            } catch (err) {
+                newsletterThanks.hidden = false;
+                newsletterThanks.className = 'newsletter-thanks error';
+                newsletterThanks.textContent =
+                    'Something went wrong — please email us directly at info@radensys.eu.';
+                submitBtn.disabled = false;
+            }
         });
     }
 

@@ -170,6 +170,8 @@
                     3. Vervang hieronder YOUR_FORM_ID door dat ID.
                 -->
                 <form class="contact-form" id="contactForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                    <input type="hidden" name="_subject" value="New contact form message — Radensys website">
+
                     <div class="field">
                         <label for="contactName">Name</label>
                         <input type="text" id="contactName" name="name" placeholder="Your name" required>
@@ -197,7 +199,14 @@
     <section class="newsletter-section">
         <h2>Join Our Mailing List</h2>
         <p>Receive exclusive deals, seasonal promotions, and industry tips straight to your inbox.</p>
-        <form id="newsletterForm" class="newsletter-form">
+        <!--
+            Zelfde Formspree-formulier als het contactformulier (zie hierboven) —
+            beide komen zo toe op hetzelfde e-mailadres, met een duidelijk
+            onderwerp om ze uit elkaar te houden.
+        -->
+        <form id="newsletterForm" class="newsletter-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+            <input type="hidden" name="_subject" value="New mailing list signup — Radensys website">
+            <input type="hidden" name="form_name" value="Mailing list signup">
             <label for="newsletterEmail" class="sr-only">Email Address</label>
             <input type="email" id="newsletterEmail" name="email" placeholder="Email Address" required>
             <button type="submit" class="btn">Sign Up</button>

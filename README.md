@@ -63,25 +63,30 @@ De site gebruikt lokale afbeeldingen uit `assets/images/`:
 Wil je een ander logo of andere foto's gebruiken? Zet het nieuwe bestand in
 `assets/images/` en pas het pad aan in `index.html`.
 
-## Contactformulier instellen (belangrijk!)
+## Contactformulier & nieuwsbrief instellen (belangrijk!)
 
-De "Let's Work Together"-sectie heeft nu een écht contactformulier (naam, e-mail,
-bericht) i.p.v. enkel een mailto-knop. Het gebruikt **Formspree**, een gratis
-dienst (tot 50 verzendingen/maand) die formulieren naar je e-mail doorstuurt
+Zowel de "Let's Work Together"-sectie (naam, e-mail, bericht) als het "Join
+Our Mailing List"-formulier sturen nu écht een e-mail door, en komen allebei
+toe op **hetzelfde adres**. Dit gebeurt via **Formspree**, een gratis dienst
+(tot 50 verzendingen/maand) die formulieren doorstuurt naar een e-mailadres
 zonder dat je een eigen server nodig hebt.
 
 Zo stel je het in:
-1. Ga naar [formspree.io](https://formspree.io) en maak een gratis account.
-2. Maak een nieuw formulier aan → je krijgt een URL zoals `https://formspree.io/f/abcd1234`.
-3. Open `index.html`, zoek de regel:
-   ```html
-   <form class="contact-form" id="contactForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-   ```
-   en vervang `YOUR_FORM_ID` door jouw eigen ID.
+1. Ga naar [formspree.io](https://formspree.io) en maak een gratis account aan
+   **met info@radensys.eu als accountadres** — daar komen de formulieren dan
+   automatisch op toe.
+2. Maak één nieuw formulier aan → je krijgt een URL zoals `https://formspree.io/f/abcd1234`.
+3. Open `index.html`, en vervang **beide keren** dat `YOUR_FORM_ID` voorkomt
+   (één keer bij het contactformulier, één keer bij het nieuwsbriefformulier)
+   door datzelfde ID.
 
-Tot je dat gedaan hebt, toont het formulier bij versturen een foutmelding en
-verwijst het bezoekers naar het e-mailadres eronder — de site blijft dus altijd
-bruikbaar.
+Beide formulieren gebruiken bewust hetzelfde Formspree-formulier, maar met een
+verschillend onderwerp (`_subject`) zodat je in je inbox meteen ziet of het om
+een contactaanvraag of een nieuwsbrief-inschrijving gaat.
+
+Tot je dat ID hebt ingevuld, tonen beide formulieren een foutmelding bij
+versturen en verwijzen ze bezoekers naar info@radensys.eu — de site blijft dus
+altijd bruikbaar.
 
 ## Nieuwe pagina: het technisch paper
 
@@ -106,19 +111,10 @@ weten als je wil dat ik dat gelijktrek.
   verduisterd (van 0.5 naar 0.85 dekking, lichtere overlay), met een zachte
   tekstschaduw zodat de titel leesbaar blijft.
 
-## Nieuwsbrief-formulier
-
-Het formulier ("Join Our Mailing List") toont nog enkel een bedankbericht in de
-browser — er wordt nergens een e-mailadres opgeslagen. Om dat wel te doen kan je
-het koppelen aan dezelfde Formspree-account (nieuw formulier aanmaken), of aan:
-
-- **Mailchimp** of **Brevo** — echte nieuwsbrieflijst met embed-formulier
-
-Laat het weten als je hulp wil om dat in te stellen.
-
 ## UX-verbeteringen die zijn toegevoegd
 
-- **Werkend contactformulier** (zie hierboven) i.p.v. enkel een mailto-link.
+- **Werkende formulieren** (zie hierboven): zowel het contactformulier als de
+  nieuwsbrief-inschrijving sturen een echte e-mail naar info@radensys.eu.
 - **Actieve navigatie**: de navigatielink van de sectie die je aan het bekijken
   bent, licht op in het blauwe accent (scroll-spy).
 - **Sticky mobiele contactbalk**: op telefoon blijft er onderaan altijd een
