@@ -18,7 +18,7 @@
     <header class="navbar">
         <div class="logo">
             <a href="#home">
-                <img src="https://images.squarespace-cdn.com/content/v1/69a155e3d338a120b5c73211/676b66a2-4ef5-4bac-9a9b-f9a702bea36b/Logo_Radensys_white.png?format=1500w" alt="RADENSYS">
+                <img src="assets/images/logo.png" alt="RADENSYS" width="160" height="57" decoding="async">
             </a>
         </div>
 
@@ -29,18 +29,18 @@
         </button>
 
         <ul class="nav-links" id="navLinks">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#work">Our Work</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact" class="nav-cta">Contact</a></li>
+            <li><a href="#home" data-nav-link>Home</a></li>
+            <li><a href="#services" data-nav-link>Services</a></li>
+            <li><a href="#work" data-nav-link>Our Work</a></li>
+            <li><a href="#about" data-nav-link>About</a></li>
+            <li><a href="#contact" class="nav-cta" data-nav-link>Contact</a></li>
         </ul>
     </header>
 
     <!-- ============ HERO ============ -->
     <section class="hero" id="home">
         <div class="hero-grid" aria-hidden="true"></div>
-        <div class="hero-bg" style="background-image:url('https://images.squarespace-cdn.com/content/v1/69a155e3d338a120b5c73211/de0a1f00-ae99-4edc-8501-90dabebf0cb3/foto_1.png?format=1500w');"></div>
+        <div class="hero-bg" style="background-image:url('assets/images/hero-bg.jpg');"></div>
         <div class="hero-overlay"></div>
         <div class="hero-scanline" aria-hidden="true"></div>
 
@@ -96,16 +96,16 @@
         <h2>Our Work in the Field</h2>
         <div class="gallery-grid">
             <figure class="gallery-item reveal">
-                <img src="https://images.squarespace-cdn.com/content/v1/69a155e3d338a120b5c73211/b00c381d-57d0-4077-9961-b33d05f6e098/1000023471.jpg?format=1000w" alt="Engineering project on site" loading="lazy">
-                <figcaption>FIG. 01</figcaption>
+                <img src="assets/images/work-air.jpg" alt="Radiation threat detection at an airport cargo terminal" width="1000" height="747" loading="lazy" decoding="async">
+                <figcaption>FIG. 01 — AIR</figcaption>
             </figure>
             <figure class="gallery-item reveal">
-                <img src="https://images.squarespace-cdn.com/content/v1/69a155e3d338a120b5c73211/2f53d336-437f-4838-b3fc-3b0c488460a3/1000023472.jpg?format=1000w" alt="Engineering project detail" loading="lazy">
-                <figcaption>FIG. 02</figcaption>
+                <img src="assets/images/work-rail.jpg" alt="Radiation detection poles along a rail line" width="1000" height="749" loading="lazy" decoding="async">
+                <figcaption>FIG. 02 — RAIL</figcaption>
             </figure>
             <figure class="gallery-item reveal">
-                <img src="https://images.squarespace-cdn.com/content/v1/69a155e3d338a120b5c73211/bab133c4-dc83-427e-998c-793218cba4f2/foto_4.png?format=1000w" alt="Industrial installation" loading="lazy">
-                <figcaption>FIG. 03</figcaption>
+                <img src="assets/images/work-road.jpg" alt="Radiation detection checkpoint on a road" width="1000" height="562" loading="lazy" decoding="async">
+                <figcaption>FIG. 03 — ROAD</figcaption>
             </figure>
         </div>
     </section>
@@ -129,10 +129,40 @@
         <p class="eyebrow">GET STARTED</p>
         <h2>Let's Work Together</h2>
         <p>
-            Ready to elevate your next project? Contact us today for a complimentary consultation
+            Ready to elevate your next project? Fill in the form below, or email us directly,
             and discover how our engineering experts can add value.
         </p>
-        <a href="mailto:info@radensys.eu" class="btn">Contact Us</a>
+
+        <!--
+            Formulier via Formspree (gratis tot 50 verzendingen/maand, geen backend nodig).
+            1. Ga naar https://formspree.io en maak een gratis account.
+            2. Maak een nieuw formulier aan, je krijgt een unieke URL zoals
+               https://formspree.io/f/abcd1234
+            3. Vervang hieronder YOUR_FORM_ID door dat ID.
+            Tot dan toont het formulier een foutmelding bij versturen —
+            gebruik ondertussen gerust de mailto-knop.
+        -->
+        <form class="contact-form" id="contactForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+            <div class="form-row">
+                <label for="contactName" class="sr-only">Naam</label>
+                <input type="text" id="contactName" name="name" placeholder="Your name" required>
+
+                <label for="contactEmail" class="sr-only">E-mailadres</label>
+                <input type="email" id="contactEmail" name="email" placeholder="Your email" required>
+            </div>
+
+            <label for="contactMessage" class="sr-only">Bericht</label>
+            <textarea id="contactMessage" name="message" rows="4" placeholder="Tell us about your project" required></textarea>
+
+            <button type="submit" class="btn">Send Message</button>
+        </form>
+
+        <p id="contactFormStatus" class="form-status" hidden></p>
+
+        <p class="contact-alt">
+            Prefer email? Reach us directly at
+            <a href="mailto:info@radensys.eu">info@radensys.eu</a>
+        </p>
     </section>
 
     <!-- ============ NEWSLETTER ============ -->
@@ -154,6 +184,15 @@
         <p><a href="https://www.radensys.eu">WEB&nbsp;// www.radensys.eu</a></p>
         <p class="copyright">&copy; 2026 RADENSYS. All rights reserved.</p>
     </footer>
+
+    <!-- Sticky mobiele contact-balk (enkel zichtbaar op smalle schermen) -->
+    <div class="mobile-cta-bar">
+        <a href="mailto:info@radensys.eu">Email</a>
+        <a href="#contact" class="btn">Get in Contact</a>
+    </div>
+
+    <!-- Back-to-top knop, verschijnt na scrollen -->
+    <button id="backToTop" class="back-to-top" aria-label="Terug naar boven" hidden>&uarr;</button>
 
     <script src="main.js"></script>
 </body>

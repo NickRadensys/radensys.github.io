@@ -141,7 +141,7 @@ a {
 }
 
 .navbar .logo img {
-    height: 36px;
+    height: 46px;
     width: auto;
     display: block;
 }
@@ -177,6 +177,11 @@ a {
 
 .nav-links a.nav-cta:hover {
     border-color: var(--accent);
+}
+
+/* Actieve sectie in de navigatie (via scroll-spy in main.js) */
+.nav-links a.active-link {
+    color: var(--accent);
 }
 
 /* Hamburger (verborgen op desktop) */
@@ -482,6 +487,68 @@ a {
     margin-bottom: 32px;
 }
 
+/* --- Contactformulier --- */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    text-align: left;
+    max-width: 520px;
+    margin: 0 auto;
+}
+
+.form-row {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+}
+
+.form-row input {
+    flex: 1 1 200px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 14px 16px;
+    border-radius: 4px;
+    border: 1px solid var(--border-color-strong);
+    background-color: var(--bg-elevated);
+    color: var(--text-main);
+    font-family: var(--font-body);
+    font-size: 1rem;
+    resize: vertical;
+}
+
+.contact-form input:focus-visible,
+.contact-form textarea:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+}
+
+.contact-form .btn {
+    align-self: flex-start;
+}
+
+.form-status {
+    margin-top: 16px;
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+}
+
+.form-status.success { color: var(--accent); }
+.form-status.error { color: #ff6b6b; }
+
+.contact-alt {
+    margin-top: 28px !important;
+    font-size: 0.95rem !important;
+}
+
+.contact-alt a {
+    color: var(--technical-blue);
+    text-decoration: underline;
+}
+
 /* ==========================================================
    NEWSLETTER
    ========================================================== */
@@ -577,6 +644,40 @@ footer .copyright {
     letter-spacing: normal;
 }
 
+/* --- Back to top knop --- */
+.back-to-top {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    z-index: 90;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 1px solid var(--border-color-strong);
+    background-color: var(--bg-elevated);
+    color: var(--text-main);
+    font-size: 1.2rem;
+    cursor: pointer;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.2s, transform 0.2s, border-color 0.2s;
+}
+
+.back-to-top.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.back-to-top:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
+/* --- Sticky mobiele CTA-balk (verborgen op desktop) --- */
+.mobile-cta-bar {
+    display: none;
+}
+
 /* Focus states voor toetsenbordgebruik */
 a:focus-visible,
 button:focus-visible {
@@ -621,6 +722,45 @@ button:focus-visible {
     }
 
     .crosshair { display: none; }
+
+    /* Sticky contact-balk onderaan het scherm op mobiel */
+    .mobile-cta-bar {
+        display: flex;
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 95;
+        gap: 10px;
+        padding: 12px 16px;
+        background-color: rgba(10, 20, 32, 0.95);
+        backdrop-filter: blur(10px);
+        border-top: 1px solid var(--border-color);
+    }
+
+    .mobile-cta-bar a {
+        flex: 1;
+        text-align: center;
+        padding: 12px;
+        border-radius: 4px;
+        text-decoration: none;
+        font-family: var(--font-mono);
+        font-size: 0.85rem;
+    }
+
+    .mobile-cta-bar a:first-child {
+        border: 1px solid var(--border-color-strong);
+        color: var(--text-muted);
+    }
+
+    /* Ruimte onderaan zodat de sticky balk niets bedekt */
+    body {
+        padding-bottom: 72px;
+    }
+
+    .back-to-top {
+        bottom: 84px;
+    }
 }
 
 @media (max-width: 600px) {
