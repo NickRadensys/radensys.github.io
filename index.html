@@ -164,12 +164,11 @@
             <div class="contact-card">
                 <!--
                     Formulier via Formspree (gratis tot 50 verzendingen/maand, geen backend nodig).
-                    1. Ga naar https://formspree.io en maak een gratis account.
-                    2. Maak een nieuw formulier aan, je krijgt een unieke URL zoals
-                       https://formspree.io/f/abcd1234
-                    3. Vervang hieronder YOUR_FORM_ID door dat ID.
+                    Inzendingen komen toe op info@radensys.eu.
+                    Het versturen zelf gebeurt via fetch() in main.js, zodat de bezoeker
+                    op de pagina blijft; zonder JavaScript valt dit terug op een gewone POST.
                 -->
-                <form class="contact-form" id="contactForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                <form class="contact-form" id="contactForm" action="https://formspree.io/f/xnjebndk" method="POST">
                     <input type="hidden" name="_subject" value="New contact form message — Radensys website">
 
                     <div class="field">
