@@ -77,6 +77,11 @@ document.addEventListener('DOMContentLoaded', () => {
             submitBtn.disabled = true;
             submitBtn.textContent = 'Sending…';
 
+            // Eventuele melding van een vorige poging wissen, zodat een oude fout
+            // niet blijft staan terwijl er opnieuw verzonden wordt.
+            contactFormStatus.hidden = true;
+            contactFormStatus.className = 'form-status';
+
             try {
                 const response = await fetch(contactForm.action, {
                     method: 'POST',
@@ -87,6 +92,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (response.ok) {
                     contactForm.reset();
                     contactForm.hidden = true;
+
+                    // Knop weer in de uitgangsstand zetten. Het formulier is nu
+                    // verborgen, maar zo staat alles klaar mocht het opnieuw
+                    // getoond worden en blijft er geen 'Sending…' hangen.
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = 'Send Message';
+
                     contactFormStatus.hidden = false;
                     contactFormStatus.className = 'form-status success';
                     contactFormStatus.textContent = 'Thanks — we\'ll be in touch soon.';

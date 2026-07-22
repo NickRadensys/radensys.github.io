@@ -59,6 +59,13 @@ a {
     color: inherit;
 }
 
+/* Het hidden-attribuut moet altijd winnen. Zonder deze regel overschrijft een
+   class met een eigen display-waarde (bv. .contact-form { display: flex }) de
+   standaardregel van de browser, waardoor element.hidden = true niets doet. */
+[hidden] {
+    display: none !important;
+}
+
 .sr-only {
     position: absolute;
     width: 1px;
