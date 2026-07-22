@@ -130,6 +130,24 @@ a {
     color: #ffffff;
 }
 
+/* Rustige, secundaire knop: leesbaar maar duidelijk ondergeschikt aan
+   .btn--outline, zodat de hiërarchie tussen de twee acties klopt. */
+.btn--quiet {
+    background-color: transparent;
+    color: var(--text-muted);
+    border: 1px solid var(--border-color-strong);
+    padding: 12px 22px;
+    font-size: 0.88rem;
+    font-weight: 500;
+}
+
+.btn--quiet:hover {
+    background-color: transparent;
+    border-color: var(--accent);
+    color: var(--accent);
+    box-shadow: none;
+}
+
 /* ==========================================================
    SCROLL REVEAL
    ========================================================== */
@@ -375,6 +393,21 @@ a {
     opacity: 0.8;
 }
 
+/* Knoprij onder de cijfers: 'Learn More' is de primaire actie,
+   de folderdownload staat er bewust rustiger naast. */
+.product-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 14px;
+    margin-top: 8px;
+}
+
+.product-actions .btn--outline {
+    align-self: auto;
+    margin-top: 0;
+}
+
 .product-footnote {
     max-width: 760px;
     margin: 40px auto 0 auto;
@@ -472,6 +505,12 @@ a {
 .about-frame p:not(.eyebrow) {
     color: var(--text-muted);
     font-size: 1.05rem;
+}
+
+/* De globale reset zet alle marges op 0; losse alinea's hebben dus
+   expliciet ruimte nodig. */
+.about-frame p:not(.eyebrow) + p {
+    margin-top: 18px;
 }
 
 /* ==========================================================
