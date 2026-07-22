@@ -23,43 +23,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    /* --- Nieuwsbrief formulier ---
-       Verzendt naar hetzelfde Formspree-formulier als het contactformulier
-       (zie index.html) — vul eerst je eigen Formspree-ID in, anders blijft
-       dit een foutmelding tonen. */
-    const newsletterForm = document.getElementById('newsletterForm');
-    const newsletterThanks = document.getElementById('newsletterThanks');
-
-    if (newsletterForm && newsletterThanks) {
-        newsletterForm.addEventListener('submit', async (event) => {
-            event.preventDefault();
-
-            const submitBtn = newsletterForm.querySelector('button[type="submit"]');
-            submitBtn.disabled = true;
-
-            try {
-                const response = await fetch(newsletterForm.action, {
-                    method: 'POST',
-                    body: new FormData(newsletterForm),
-                    headers: { 'Accept': 'application/json' }
-                });
-
-                if (!response.ok) throw new Error('Newsletter submission failed');
-
-                newsletterForm.reset();
-                newsletterForm.hidden = true;
-                newsletterThanks.hidden = false;
-                newsletterThanks.textContent = 'Thank you!';
-            } catch (err) {
-                newsletterThanks.hidden = false;
-                newsletterThanks.className = 'newsletter-thanks error';
-                newsletterThanks.textContent =
-                    'Something went wrong — please email us directly at info@radensys.eu.';
-                submitBtn.disabled = false;
-            }
-        });
-    }
-
     /* --- Scroll reveal: secties/kaarten verschijnen zacht bij scrollen ---
        Respecteert prefers-reduced-motion (zie CSS): daar staat alles
        gewoon meteen zichtbaar, dus deze observer is dan puur decoratief. */
