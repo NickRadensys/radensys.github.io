@@ -364,6 +364,17 @@ a {
     font-size: 0.95rem;
 }
 
+/* Bronvermelding bij elk cijfer — zichtbaar, maar ondergeschikt aan het label.
+   Geen cijfer op de site zonder bron. */
+.stat-source {
+    display: block;
+    margin-top: 6px;
+    color: var(--text-muted);
+    font-size: 0.78rem;
+    letter-spacing: 0.02em;
+    opacity: 0.8;
+}
+
 .product-footnote {
     max-width: 760px;
     margin: 40px auto 0 auto;
