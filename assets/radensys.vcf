@@ -4,8 +4,9 @@ FN:Radensys
 N:Radensys;;;;
 ORG:Radensys
 EMAIL;TYPE=INTERNET,WORK:info@radensys.eu
+TEL;TYPE=WORK,VOICE:+3214750213
+ADR;TYPE=WORK:;;Watertorenweg 32;Herselt;;2230;Belgium
 URL:https://www.radensys.eu
-ADR;TYPE=WORK:;;;Herselt;;;Belgium
 NOTE:Isotope identification, built into the spreader bar.
 X-ABShowAs:COMPANY
 END:VCARD

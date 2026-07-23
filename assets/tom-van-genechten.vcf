@@ -1,0 +1,10 @@
+BEGIN:VCARD
+VERSION:3.0
+FN:Tom Van Genechten
+N:Van Genechten;Tom;;;
+ORG:Radensys
+TITLE:Market Analyst
+EMAIL;TYPE=INTERNET,WORK:tom.vg@radensys.eu
+ADR;TYPE=WORK:;;Watertorenweg 32;Herselt;;2230;Belgium
+URL:https://www.radensys.eu
+END:VCARD

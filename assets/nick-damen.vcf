@@ -1,0 +1,11 @@
+BEGIN:VCARD
+VERSION:3.0
+FN:Nick Damen
+N:Damen;Nick;;;
+ORG:Radensys
+TITLE:Technical Lead
+EMAIL;TYPE=INTERNET,WORK:nick.d@radensys.eu
+TEL;TYPE=CELL,VOICE:+32472577020
+ADR;TYPE=WORK:;;Watertorenweg 32;Herselt;;2230;Belgium
+URL:https://www.radensys.eu
+END:VCARD

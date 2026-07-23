@@ -1,0 +1,10 @@
+BEGIN:VCARD
+VERSION:3.0
+FN:Joachim Geysen
+N:Geysen;Joachim;;;
+ORG:Radensys
+TITLE:CEO
+EMAIL;TYPE=INTERNET,WORK:joachim.g@radensys.eu
+ADR;TYPE=WORK:;;Watertorenweg 32;Herselt;;2230;Belgium
+URL:https://www.radensys.eu
+END:VCARD

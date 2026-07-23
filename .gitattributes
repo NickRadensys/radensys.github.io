@@ -1,0 +1,5 @@
+# vCards moeten volgens RFC 6350 CRLF-regeleindes hebben. Zonder deze regel
+# zet git ze bij het committen om naar LF (core.autocrlf), en dan is het
+# bestand dat GitHub Pages uitserveert niet meer spec-conform. Sommige
+# telefoons zijn daar streng in bij het importeren van een contact.
+*.vcf -text
