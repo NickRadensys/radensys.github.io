@@ -1,0 +1,11 @@
+BEGIN:VCARD
+VERSION:3.0
+FN:Radensys
+N:Radensys;;;;
+ORG:Radensys
+EMAIL;TYPE=INTERNET,WORK:info@radensys.eu
+URL:https://www.radensys.eu
+ADR;TYPE=WORK:;;;Herselt;;;Belgium
+NOTE:Isotope identification, built into the spreader bar.
+X-ABShowAs:COMPANY
+END:VCARD
