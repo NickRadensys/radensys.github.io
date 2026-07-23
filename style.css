@@ -511,7 +511,6 @@ a {
 }
 
 /* ==========================================================
-
    YOUR CONTACTS
    ========================================================== */
 .people-section {
@@ -618,7 +617,6 @@ a {
 }
 
 /* ==========================================================
-
    SERVICES
    ========================================================== */
 .services-section {
@@ -1143,6 +1141,76 @@ button:focus-visible {
     box-shadow: none;
 }
 
+/* Persoonlijke contactkaarten. Mobiel-eerst: één kolom, naast elkaar
+   zodra er ruimte is. Alleen tekst, geen foto's. */
+.link-people {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+    margin-bottom: 32px;
+    text-align: left;
+}
+
+.person-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 3px;
+    padding: 20px 22px;
+    background-color: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    border-radius: 10px;
+}
+
+.person-card h2 {
+    font-size: 1.05rem;
+    color: #ffffff;
+    margin-bottom: 1px;
+}
+
+.person-card-role {
+    color: #6db4f2;
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    margin-bottom: 8px;
+}
+
+/* Ruime tapzone: dit wordt vrijwel altijd op een telefoon geopend, dus
+   e-mail en telefoonnummer moeten comfortabel raakbaar zijn. */
+.person-card a {
+    color: var(--text-on-dark-muted);
+    text-decoration: none;
+    font-size: 0.9rem;
+    padding: 11px 0;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    word-break: break-word;
+}
+
+.person-card a:hover {
+    color: var(--accent);
+}
+
+.person-card-save {
+    margin-top: 4px;
+    color: #ffffff !important;
+    font-weight: 600;
+    font-size: 0.85rem !important;
+    border: 1px solid rgba(255, 255, 255, 0.28);
+    border-radius: 7px;
+    padding: 11px 18px !important;
+    justify-content: center;
+    align-self: stretch;
+}
+
+.person-card-save:hover {
+    color: var(--accent) !important;
+    border-color: var(--accent);
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
 .link-meta {
     display: flex;
     flex-direction: column;
@@ -1158,6 +1226,40 @@ button:focus-visible {
 
 .link-meta a:hover {
     color: var(--accent);
+}
+
+/* Vanaf tabletbreedte staan de twee contactkaarten naast elkaar. De
+   kolom met knoppen blijft daarbij op zijn oorspronkelijke breedte,
+   zodat de knoppen niet onnodig uitrekken. */
+@media (min-width: 700px) {
+    .link-card {
+        max-width: 660px;
+    }
+
+    .link-logo,
+    .link-tagline,
+    .link-actions {
+        max-width: 400px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .link-people {
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+    }
+}
+
+/* Vanaf deze breedte passen de drie contactkaarten op één rij, wat er
+   evenwichtiger uitziet dan twee kaarten met een losse derde eronder. */
+@media (min-width: 920px) {
+    .link-card {
+        max-width: 900px;
+    }
+
+    .link-people {
+        grid-template-columns: repeat(3, 1fr);
+    }
 }
 
 /* ==========================================================
