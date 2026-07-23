@@ -3,33 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RADENSYS | Redirecting…</title>
+    <title>RADENSYS | Contact &amp; downloads</title>
+    <meta name="description" content="Save our contact details, download the technical folder or the SBDS whitepaper, or get in touch with Radensys.">
 
-    <!-- Fallback voor browsers zonder JavaScript: herlaadt na 0 seconden naar de homepagina -->
-    <meta http-equiv="refresh" content="0; url=index.html">
-    <link rel="canonical" href="index.html">
+    <!--
+        Deze pagina wordt alleen bereikt via de QR-code op de visitekaartjes en
+        is nergens vanaf de site gelinkt. Buiten de zoekresultaten houden, zodat
+        er naast de homepage geen tweede Radensys-pagina in Google verschijnt.
+    -->
+    <meta name="robots" content="noindex, follow">
 
-    <style>
-        body {
-            margin: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            min-height: 100vh;
-            background-color: #0a1826;
-            color: #eef4fb;
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            text-align: center;
-        }
-        a { color: #6db4f2; }
-    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <p>Redirecting to <a href="index.html">radensys.eu</a>&hellip;</p>
+<body class="link-page">
 
-    <!-- Onmiddellijke redirect voor browsers mét JavaScript -->
-    <script>
-        window.location.replace('index.html');
-    </script>
+    <!--
+        Landingspagina achter de QR-code op de gedrukte visitekaartjes.
+        Eén QR voor iedereen, dus bedrijfsbreed en zonder persoonsnamen.
+        De bezoeker heeft ons net gesproken: geen verkooppraat, alleen
+        de vier dingen die hij op dat moment wil doen.
+        Bewust standalone — geen navbar, geen menu, geen main.js.
+    -->
+    <main class="link-card">
+        <img src="assets/images/logo.png" alt="RADENSYS" class="link-logo" width="260" height="92">
+        <p class="link-tagline">Isotope identification, built into the spreader bar.</p>
+
+        <nav class="link-actions" aria-label="Contact and downloads">
+            <a href="assets/radensys.vcf" class="btn link-btn" download>Save contact</a>
+            <a href="assets/images/Folder_radensys_transport_V3.pdf" class="btn link-btn link-btn--secondary" download>Download the technical folder (PDF)</a>
+            <a href="sbds-whitepaper.html" class="btn link-btn link-btn--secondary">Read the technical whitepaper</a>
+            <a href="index.html#contact" class="btn link-btn link-btn--secondary">Get in touch</a>
+        </nav>
+
+        <div class="link-meta">
+            <a href="mailto:info@radensys.eu">info@radensys.eu</a>
+            <a href="https://www.radensys.eu">www.radensys.eu</a>
+            <span>Herselt, Belgium</span>
+        </div>
+    </main>
+
 </body>
 </html>

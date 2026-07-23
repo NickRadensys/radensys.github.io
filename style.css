@@ -872,6 +872,93 @@ button:focus-visible {
 }
 
 /* ==========================================================
+   LINKS PAGE (links.html)
+   Standalone landingspagina achter de QR-code op de visitekaartjes.
+   Mobiel-eerst: dit wordt vrijwel altijd op een telefoon geopend.
+   Donkere achtergrond omdat logo.png de lichte logoversie is — die
+   hoort op navy, net als in de navbar, hero en footer.
+   ========================================================== */
+.link-page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    min-height: 100dvh;
+    padding: 44px 20px;
+    background-color: var(--navy);
+}
+
+.link-card {
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.link-logo {
+    display: block;
+    width: 210px;
+    max-width: 72%;
+    height: auto;
+    margin: 0 auto 18px auto;
+}
+
+.link-tagline {
+    color: var(--text-on-dark-muted);
+    font-size: 0.98rem;
+    line-height: 1.5;
+    margin-bottom: 36px;
+}
+
+.link-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 36px;
+}
+
+/* Volle breedte en een ruime tapzone — ruim boven de 44px die je
+   op een telefoon minimaal wilt raken. */
+.link-btn {
+    width: 100%;
+    padding: 18px 22px;
+    font-size: 1rem;
+    text-align: center;
+}
+
+/* De drie vervolgacties: leesbaar op navy, maar duidelijk
+   ondergeschikt aan 'Save contact'. */
+.link-btn--secondary {
+    background-color: transparent;
+    color: var(--text-on-dark);
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    font-weight: 500;
+}
+
+.link-btn--secondary:hover {
+    background-color: rgba(255, 255, 255, 0.06);
+    border-color: var(--accent);
+    color: #ffffff;
+    box-shadow: none;
+}
+
+.link-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    font-size: 0.85rem;
+    color: var(--text-on-dark-muted);
+}
+
+.link-meta a {
+    color: var(--text-on-dark-muted);
+    text-decoration: none;
+}
+
+.link-meta a:hover {
+    color: var(--accent);
+}
+
+/* ==========================================================
    RESPONSIVE
    ========================================================== */
 @media (max-width: 900px) {
