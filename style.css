@@ -417,6 +417,101 @@ a {
 }
 
 /* ==========================================================
+   HOW IT WORKS
+   Lichte sectie-achtergrond zodat de drie stappen zich visueel
+   losmaken van het productblok erboven.
+   ========================================================== */
+.how-section {
+    background-color: var(--bg-soft);
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+    padding: 100px 2rem;
+    margin-bottom: 110px;
+}
+
+.how-intro {
+    max-width: 720px;
+    margin: 0 auto 54px auto;
+    text-align: center;
+}
+
+.how-intro h2 {
+    font-size: 2.1rem;
+    margin-bottom: 18px;
+}
+
+.how-intro p {
+    color: var(--text-muted);
+    font-size: 1.05rem;
+}
+
+.how-steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 24px;
+    max-width: var(--max-width);
+    margin: 0 auto;
+    list-style: none;
+}
+
+.how-step {
+    position: relative;
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    padding: 32px 28px;
+    overflow: hidden;
+}
+
+/* Accentbalkje dat bij hover van boven naar beneden invult — dezelfde
+   subtiele interactie-taal als de kaarten in Services. */
+.how-step::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background-color: var(--accent);
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: transform 0.3s;
+}
+
+.how-step:hover::after {
+    transform: scaleY(1);
+}
+
+.how-step-num {
+    display: block;
+    font-family: var(--font-display);
+    font-size: 2.4rem;
+    font-weight: 700;
+    color: #c4d6ea;
+    line-height: 1;
+    margin-bottom: 16px;
+}
+
+.how-step h3 {
+    font-size: 1.15rem;
+    margin-bottom: 12px;
+}
+
+.how-step p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+.how-footnote {
+    max-width: 720px;
+    margin: 44px auto 0 auto;
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 1rem;
+}
+
+/* ==========================================================
+
    SERVICES
    ========================================================== */
 .services-section {
