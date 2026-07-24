@@ -157,26 +157,97 @@
     <section class="services-section reveal" id="services">
         <p class="eyebrow">CAPABILITIES</p>
         <h2>What We Bring to Every Deployment</h2>
+        <!--
+            Uitklapbare capability-kaarten. Elk paneel staat in de DOM direct
+            achter zijn eigen kaart, zodat het op mobiel (1 kolom) onder de
+            juiste kaart opent. Vanaf tabletbreedte schuift CSS 'order' de
+            panelen achter de hele rij, waar ze over de volledige breedte
+            openen. De afhandeling staat onderaan main.js.
+        -->
         <div class="grid">
-            <div class="card reveal">
+            <div class="card reveal" data-cap="1">
                 <span class="card-code">01</span>
-                <h3>Isotope Identification</h3>
+                <h3 id="cap-title-1">Isotope Identification</h3>
                 <p>Real-time isotope detection and classification, distinguishing genuine threats from harmless background radiation.</p>
+                <button type="button" class="card-more" data-cap-toggle="1" aria-expanded="false" aria-controls="cap-panel-1">
+                    <span class="card-more-label">Learn more</span>
+                    <span class="card-more-arrow" aria-hidden="true">&rarr;</span>
+                </button>
             </div>
-            <div class="card reveal">
+            <div class="cap-panel" id="cap-panel-1" data-cap-panel="1" role="region" aria-labelledby="cap-title-1" hidden>
+                <div class="cap-panel-inner">
+                    <p>
+                        Every isotope emits gamma radiation at a characteristic energy. That energy is a
+                        fingerprint: it tells you <em>what</em> is inside the container, not just how much.
+                        Caesium-137 peaks at 662&nbsp;keV, potassium-40 at 1460&nbsp;keV. Standard portal
+                        monitors measure total count rate only and cannot tell the two apart &mdash; which is
+                        why they raise false alarms on fertilizer and ceramics. The SBDS recognises the
+                        difference and leaves natural background radiation alone.
+                    </p>
+                </div>
+            </div>
+
+            <div class="card reveal" data-cap="2">
                 <span class="card-code">02</span>
-                <h3>Spreader Bar Integration</h3>
+                <h3 id="cap-title-2">Spreader Bar Integration</h3>
                 <p>Detection hardware built directly into terminal equipment, scanning every container with zero added handling time.</p>
+                <button type="button" class="card-more" data-cap-toggle="2" aria-expanded="false" aria-controls="cap-panel-2">
+                    <span class="card-more-label">Learn more</span>
+                    <span class="card-more-arrow" aria-hidden="true">&rarr;</span>
+                </button>
             </div>
-            <div class="card reveal">
+            <div class="cap-panel" id="cap-panel-2" data-cap-panel="2" role="region" aria-labelledby="cap-title-2" hidden>
+                <div class="cap-panel-inner">
+                    <p>
+                        The detectors sit on the spreader bar itself. There is no separate lane, no second
+                        handling and nothing extra for the crane operator to do. During the normal lift cycle
+                        of 20 to 40 seconds the detector sits centimetres from the container wall &mdash;
+                        short distance, long measuring time, and low background out over the water. One
+                        system per crane is enough: every container the crane touches is screened.
+                    </p>
+                </div>
+            </div>
+
+            <div class="card reveal" data-cap="3">
                 <span class="card-code">03</span>
-                <h3>Multi-Modal Coverage</h3>
+                <h3 id="cap-title-3">Multi-Modal Coverage</h3>
                 <p>One detection philosophy applied consistently across air, rail, road and maritime cargo chains.</p>
+                <button type="button" class="card-more" data-cap-toggle="3" aria-expanded="false" aria-controls="cap-panel-3">
+                    <span class="card-more-label">Learn more</span>
+                    <span class="card-more-arrow" aria-hidden="true">&rarr;</span>
+                </button>
             </div>
-            <div class="card reveal">
+            <div class="cap-panel" id="cap-panel-3" data-cap-panel="3" role="region" aria-labelledby="cap-title-3" hidden>
+                <div class="cap-panel-inner">
+                    <p>
+                        The same detection philosophy applies to air, rail, road and sea freight. Radioactive
+                        material that falls out of regulatory control follows the logistics chain, and that
+                        chain is rarely purely maritime. Radensys builds on more than two decades of
+                        experience with radiation detection in the scrap, steel, waste and logistics sectors.
+                    </p>
+                </div>
+            </div>
+
+            <div class="card reveal" data-cap="4">
                 <span class="card-code">04</span>
-                <h3>Regulatory Compliance</h3>
+                <h3 id="cap-title-4">Regulatory Compliance</h3>
                 <p>Engineered to IAEA SSR-6, IMDG Code and SOLAS (1974) requirements from the ground up.</p>
+                <button type="button" class="card-more" data-cap-toggle="4" aria-expanded="false" aria-controls="cap-panel-4">
+                    <span class="card-more-label">Learn more</span>
+                    <span class="card-more-arrow" aria-hidden="true">&rarr;</span>
+                </button>
+            </div>
+            <div class="cap-panel" id="cap-panel-4" data-cap-panel="4" role="region" aria-labelledby="cap-title-4" hidden>
+                <div class="cap-panel-inner">
+                    <p>
+                        The duty to keep undeclared Class&nbsp;7 cargo out of the chain runs through binding
+                        international instruments: IAEA SSR-6 sets the safety requirements for transporting
+                        radioactive material, the IMDG Code translates them into mandatory rules for
+                        dangerous goods at sea, and SOLAS (1974) is the convention under which compliance is
+                        enforced. The SBDS is designed to meet those requirements without changing how the
+                        terminal works.
+                    </p>
+                </div>
             </div>
         </div>
     </section>

@@ -116,6 +116,103 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    /* --- Uitklapbare capability-kaarten ---
+       Eén paneel tegelijk open. De hoogte wordt in JS gezet (0 <-> scrollHeight)
+       omdat de tekstlengte per paneel verschilt; met een vaste max-height zou de
+       animatieduur per paneel anders aanvoelen. Na afloop gaat de hoogte op
+       'auto', zodat het paneel meegroeit als de tekst herschikt bij resize.
+       De knoppen zijn echte <button>-elementen, dus Enter en Space werken
+       vanzelf en de focus-stijl uit de basis-CSS geldt ook hier. */
+    const capToggles = document.querySelectorAll('[data-cap-toggle]');
+
+    if (capToggles.length) {
+        const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        let openId = null;
+
+        const panelFor = (id) => document.querySelector(`[data-cap-panel="${id}"]`);
+        const cardFor = (id) => document.querySelector(`[data-cap="${id}"]`);
+        const toggleFor = (id) => document.querySelector(`[data-cap-toggle="${id}"]`);
+
+        // Duur moet gelijk lopen met de transition op .cap-panel in style.css.
+        const DURATION = 250;
+
+        // De opruiming na de animatie hangt aan een timer per paneel, niet aan
+        // 'transitionend'. Dat event komt namelijk niet altijd: een onderbroken
+        // animatie (snel op een andere kaart klikken) of een tab die geen frames
+        // rendert laat het achterwege, en dan blijft een paneel half open staan.
+        const finishLater = (panel, fn) => {
+            clearTimeout(panel._capTimer);
+            panel._capTimer = setTimeout(fn, DURATION + 20);
+        };
+
+        const collapse = (id) => {
+            const panel = panelFor(id);
+            const toggle = toggleFor(id);
+            if (!panel || !toggle) return;
+
+            toggle.setAttribute('aria-expanded', 'false');
+            toggle.querySelector('.card-more-label').textContent = 'Learn more';
+            cardFor(id)?.classList.remove('is-open');
+
+            if (reduceMotion) {
+                clearTimeout(panel._capTimer);
+                panel.style.height = '';
+                panel.hidden = true;
+                return;
+            }
+
+            panel.style.height = `${panel.scrollHeight}px`;
+            void panel.offsetHeight; // forceer reflow zodat de terugweg animeert
+            panel.style.height = '0px';
+            finishLater(panel, () => {
+                panel.hidden = true;
+                panel.style.height = '';
+            });
+        };
+
+        const expand = (id) => {
+            const panel = panelFor(id);
+            const toggle = toggleFor(id);
+            if (!panel || !toggle) return;
+
+            clearTimeout(panel._capTimer);
+            panel.hidden = false;
+            toggle.setAttribute('aria-expanded', 'true');
+            toggle.querySelector('.card-more-label').textContent = 'Close';
+            cardFor(id)?.classList.add('is-open');
+
+            if (reduceMotion) {
+                panel.style.height = 'auto';
+                return;
+            }
+
+            panel.style.height = '0px';
+            void panel.offsetHeight;
+            panel.style.height = `${panel.scrollHeight}px`;
+            // Hoogte daarna loslaten, zodat het paneel meegroeit als de tekst
+            // herschikt bij een resize.
+            finishLater(panel, () => {
+                panel.style.height = 'auto';
+            });
+        };
+
+        capToggles.forEach((toggle) => {
+            toggle.addEventListener('click', () => {
+                const id = toggle.dataset.capToggle;
+
+                if (openId === id) {
+                    collapse(id);
+                    openId = null;
+                    return;
+                }
+
+                if (openId !== null) collapse(openId);
+                expand(id);
+                openId = id;
+            });
+        });
+    }
+
     /* --- Back-to-top knop --- */
     const backToTop = document.getElementById('backToTop');
 

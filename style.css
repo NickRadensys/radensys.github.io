@@ -631,15 +631,33 @@ a {
     margin-bottom: 50px;
 }
 
+/* Expliciete kolommen in plaats van auto-fit: de uitklappanelen moeten
+   op een voorspelbare breedte van "onder de eigen kaart" naar "onder de
+   hele rij" schakelen, en dat kan niet als het kolomaantal zelf varieert. */
 .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: 1fr;
     gap: 24px;
     text-align: left;
 }
 
+@media (min-width: 600px) {
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1000px) {
+    .grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
 .card {
     position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
     background-color: var(--card-bg);
     border: 1px solid var(--border-color);
     padding: 32px 28px;
@@ -651,6 +669,92 @@ a {
     border-color: var(--accent);
     transform: translateY(-4px);
     box-shadow: 0 16px 32px -20px rgba(16, 32, 47, 0.25);
+}
+
+/* De kaart waarvan het paneel openstaat, blijft gemarkeerd. */
+.card.is-open {
+    border-color: var(--accent);
+    box-shadow: 0 16px 32px -20px rgba(16, 32, 47, 0.25);
+}
+
+/* Subtiele tekstknop: bewust lichter dan de gevulde knoppen elders.
+   margin-top:auto lijnt hem onderaan uit, ook als de kaarten
+   verschillend lange teksten hebben. */
+/* De extra padding-bottom vergroot het tapgebied tot ruim 44px; de
+   negatieve marge haalt die ruimte visueel weer weg, zodat de knop
+   op dezelfde plek blijft staan als voorheen. */
+.card-more {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: auto;
+    margin-bottom: -14px;
+    padding: 14px 0;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-family: var(--font-body);
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--accent);
+}
+
+.card-more:hover {
+    color: var(--accent-dark);
+}
+
+.card-more-arrow {
+    display: inline-block;
+    transition: transform 0.25s ease;
+}
+
+.card-more[aria-expanded="true"] .card-more-arrow {
+    transform: rotate(90deg);
+}
+
+/* Het paneel loopt over de volledige breedte van de rij. Hoogte wordt
+   door main.js gezet (0 <-> scrollHeight) zodat de animatie klopt bij
+   een onbekende tekstlengte. */
+.cap-panel {
+    grid-column: 1 / -1;
+    height: 0;
+    overflow: hidden;
+    transition: height 0.25s ease;
+    background-color: var(--bg-soft);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+}
+
+.cap-panel-inner {
+    padding: 28px 30px;
+}
+
+.cap-panel-inner p {
+    color: var(--text-muted);
+    font-size: 1rem;
+    max-width: 80ch;
+}
+
+.cap-panel-inner em {
+    color: var(--text-main);
+    font-style: italic;
+}
+
+/* Vanaf twee kolommen schuiven de panelen achter alle kaarten, zodat het
+   paneel onder de volledige rij opent in plaats van de rij open te breken.
+   Op mobiel (1 kolom) blijft de bronvolgorde staan: daar opent het paneel
+   direct onder de kaart waar je op klikte. */
+@media (min-width: 600px) {
+    .cap-panel {
+        order: 1;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .cap-panel,
+    .card-more-arrow {
+        transition: none;
+    }
 }
 
 .card-code {
